@@ -1,0 +1,40 @@
+@model  SchoolRegister.ViewModels.VM.AttachDetachSubjectGroupVm
+
+@{
+    ViewData["Title"] = $"Attach {ViewBag.Subject.Name.ToLower()} to group";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AttachSubjectToGroup">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="GroupId" type="hidden" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input asp-for="SubjectId" type="hidden" class="form-control" />
+            </div>            
+            <div class="form-group">
+
+                <label class="control-label">Group</label>
+                <select name="groupName" class="form-control" asp-items="@ViewBag.GroupsSelectList">
+                    <option selected>Choose group</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input asp-route-subjectId="@ViewBag.Subject.Id" asp-route-groupName=@ViewBag.GroupsSelectList.SelectedValue type="submit" value="Attach" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" asp-controller="Subject">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

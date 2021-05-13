@@ -1,0 +1,19 @@
+
+@using (Html.BeginForm("GetIdToDelete", "Student", FormMethod.Post))
+{
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myModalLabel">
+                    Czy chcesz usunuąć ten przedmiot? 
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Anuluj</button>
+                <button type="submit" asp-route-studentId="@ViewBag.Id" class="btn btn-danger">Tak</button>
+            </div>
+        </div>
+}
+

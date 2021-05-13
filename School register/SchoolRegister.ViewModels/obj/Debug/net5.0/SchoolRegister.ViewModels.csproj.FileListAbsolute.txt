@@ -1,0 +1,15 @@
+C:\Users\lukas\Desktop\Studia semestr 6\Aplikacje www\Lab\School register\SchoolRegister.ViewModels\bin\Debug\net5.0\SchoolRegister.ViewModels.deps.json
+C:\Users\lukas\Desktop\Studia semestr 6\Aplikacje www\Lab\School register\SchoolRegister.ViewModels\bin\Debug\net5.0\SchoolRegister.ViewModels.dll
+C:\Users\lukas\Desktop\Studia semestr 6\Aplikacje www\Lab\School register\SchoolRegister.ViewModels\bin\Debug\net5.0\ref\SchoolRegister.ViewModels.dll
+C:\Users\lukas\Desktop\Studia semestr 6\Aplikacje www\Lab\School register\SchoolRegister.ViewModels\bin\Debug\net5.0\SchoolRegister.ViewModels.pdb
+C:\Users\lukas\Desktop\Studia semestr 6\Aplikacje www\Lab\School register\SchoolRegister.ViewModels\bin\Debug\net5.0\SchoolRegister.Model.dll
+C:\Users\lukas\Desktop\Studia semestr 6\Aplikacje www\Lab\School register\SchoolRegister.ViewModels\bin\Debug\net5.0\SchoolRegister.Model.pdb
+C:\Users\lukas\Desktop\Studia semestr 6\Aplikacje www\Lab\School register\SchoolRegister.ViewModels\obj\Debug\net5.0\SchoolRegister.ViewModels.csprojAssemblyReference.cache
+C:\Users\lukas\Desktop\Studia semestr 6\Aplikacje www\Lab\School register\SchoolRegister.ViewModels\obj\Debug\net5.0\SchoolRegister.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lukas\Desktop\Studia semestr 6\Aplikacje www\Lab\School register\SchoolRegister.ViewModels\obj\Debug\net5.0\SchoolRegister.ViewModels.AssemblyInfoInputs.cache
+C:\Users\lukas\Desktop\Studia semestr 6\Aplikacje www\Lab\School register\SchoolRegister.ViewModels\obj\Debug\net5.0\SchoolRegister.ViewModels.AssemblyInfo.cs
+C:\Users\lukas\Desktop\Studia semestr 6\Aplikacje www\Lab\School register\SchoolRegister.ViewModels\obj\Debug\net5.0\SchoolRegister.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\lukas\Desktop\Studia semestr 6\Aplikacje www\Lab\School register\SchoolRegister.ViewModels\obj\Debug\net5.0\SchoolRegister.ViewModels.csproj.CopyComplete
+C:\Users\lukas\Desktop\Studia semestr 6\Aplikacje www\Lab\School register\SchoolRegister.ViewModels\obj\Debug\net5.0\SchoolRegister.ViewModels.dll
+C:\Users\lukas\Desktop\Studia semestr 6\Aplikacje www\Lab\School register\SchoolRegister.ViewModels\obj\Debug\net5.0\ref\SchoolRegister.ViewModels.dll
+C:\Users\lukas\Desktop\Studia semestr 6\Aplikacje www\Lab\School register\SchoolRegister.ViewModels\obj\Debug\net5.0\SchoolRegister.ViewModels.pdb

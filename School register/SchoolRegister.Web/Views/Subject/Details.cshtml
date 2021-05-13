@@ -1,0 +1,64 @@
+@model SchoolRegister.ViewModels.VM.SubjectVm
+
+@{
+    ViewData["Title"] = "Subject details";
+}
+
+<h2>@ViewData["Title"]</h2>
+<hr />
+<div class="row">
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th class="col-1">
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th class="col-2">
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th class="col-3">
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th class="col-2">
+                    @Html.DisplayNameFor(model => model.TeacherName)
+                </th>
+                <th class="col-2">
+                    @Html.DisplayNameFor(model => model.Groups)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.TeacherName)
+                </td>
+                <td>
+                    <ul>
+                    @foreach (var item in Model.Groups) {
+                       
+                            <li>@Html.DisplayFor(modelItem => item.Name)</li>
+                      
+                    }
+                     </ul> 
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
