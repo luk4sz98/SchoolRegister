@@ -1,7 +1,9 @@
 @model SchoolRegister.ViewModels.VM.AddOrUpdateSubjectVm
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = $"{ViewBag.ActionType} gubject";
+    ViewData["Title"] = $"{ViewBag.ActionType}";
 }
 
 <h2>@ViewData["Title"]</h2>
@@ -14,29 +16,35 @@
                 <input asp-for="Id" type="hidden" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
+                <label asp-for="Name" class="control-label">@Localizer["Name"]</label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
+                <label asp-for="Description" class="control-label">@Localizer["Description"]</label>
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label class="control-label">Teacher</label>
+                <label class="control-label">@Localizer["Teacher"]</label>
                 <select asp-for="TeacherId" class="form-control" asp-items="@ViewBag.TeachersSelectList"></select>
                 <span asp-validation-for="TeacherId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="@ViewBag.ActionType" class="btn btn-primary" />
+                @if (ViewBag.ActionType == "Edit subject" || ViewBag.ActionType == "Edycja przedmiotu") {
+                    <input type="submit" value="@Localizer["EditButton"]" class="btn btn-primary" />
+                }
+                else {
+                    <input type="submit" value="@Localizer["AddButton"]" class="btn btn-primary" />                    
+                }
+                    
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">@Localizer["Back"]</a>
 </div>
 
 @section Scripts {

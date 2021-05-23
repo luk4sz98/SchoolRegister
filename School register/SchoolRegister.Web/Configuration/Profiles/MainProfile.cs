@@ -25,7 +25,8 @@ namespace SchoolRegister.Web.Configuration.Profiles
             CreateMap<SubjectVm, AddOrUpdateSubjectVm>();
 
             CreateMap<Student, StudentVm>()
-                .ForMember(dest => dest.Id, x => x.MapFrom(src => src.Id));
+                .ForMember(dest => dest.Id, x => x.MapFrom(src => src.Id))
+                .ForMember(dest => dest.ParentName, x => x.MapFrom(src => $"{src.Parent.FirstName} {src.Parent.LastName}"));
 
             CreateMap<Teacher, TeacherVm>();
 

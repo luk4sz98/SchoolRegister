@@ -1,7 +1,9 @@
 @model IEnumerable<SchoolRegister.ViewModels.VM.GradeVm>
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = $"{Model.ElementAt(0).Student} grades report";
+    ViewData["Title"] = $"{Model.ElementAt(0).Student} {Localizer["Title"].Value}";
 }
 
 <h2>@ViewData["Title"]</h2>
@@ -10,13 +12,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Subject)
+                @Localizer["Subject"]
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DateOfIssue)
+                @Localizer["Date"]
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.GradeValue)
+                @Localizer["Grade"]
             </th>
             <th></th>
         </tr>
@@ -37,4 +39,4 @@
 }
     </tbody>
 </table>
-<a class="btn btn-secondary" role="button" asp-action="GradesReport" >Back</a>
+<a class="btn btn-secondary" role="button" asp-action="GradesReport" >@Localizer["Back"]</a>

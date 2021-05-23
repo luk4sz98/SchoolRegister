@@ -3,6 +3,7 @@ using System.Linq;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System;
+using System.Text;
 
 namespace SchoolRegister.BLL.DataModels
 {
@@ -28,10 +29,12 @@ namespace SchoolRegister.BLL.DataModels
             .ToDictionary(avg => avg.SubjectName, avg => avg.AvgGrade);
 
         [NotMapped]
-        public IDictionary<string, List<GradeScale>> GradesPerSubject => Grades == null ? new Dictionary<string, List<GradeScale>>() : Grades
+        public IDictionary<string, List<int>> GradesPerSubject => Grades == null ? new Dictionary<string, List<int>>() : Grades
             .GroupBy(g => g.Subject.Name)
-            .Select(g => new { SubjectName = g.Key, GradeList = g.Select(x => x.GradeValue).ToList() })
+            .Select(g => new { SubjectName = g.Key, GradeList = g.Select(x => (int)x.GradeValue).ToList() })
             .ToDictionary(x => x.SubjectName, x => x.GradeList);
+
+
 
     }
 }

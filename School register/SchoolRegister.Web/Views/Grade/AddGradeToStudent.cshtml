@@ -1,7 +1,9 @@
 @model SchoolRegister.ViewModels.VM.AddGradeToStudentVm
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = $"Add grade to {ViewBag.Student}";
+    ViewData["Title"] = $"{Localizer["Title"].Value} {ViewBag.Student}";
 }
 
 <h2>@ViewData["title"]</h2>
@@ -21,25 +23,25 @@
                 <input asp-for="SubjectId" class="form-control" type="hidden"/>
             </div>
             <div class="form-group">
-                <label class="control-label">Subject</label>
+                <label class="control-label">@Localizer["Subject"]</label>
                 <select name="subj" class="form-control" asp-items="@ViewBag.SubjectsSelectList">
-                    <option selected>Choose subject</option>
+                    <option selected>@Localizer["SubjectList"]</option>
                 </select>
             </div>
             <div class="form-group">
-                <label asp-for="DateOfIssue" class="control-label">Date</label>
+                <label asp-for="DateOfIssue" class="control-label">@Localizer["Date"]</label>
                 <input asp-for="DateOfIssue" class="form-control" type="datetime-local"/>
                 <span asp-validation-for="DateOfIssue" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="GradeValue" class="control-label">Grade </label>
+                <label asp-for="GradeValue" class="control-label">@Localizer["Grade"] </label>
                 <select name="GradeValue" class="form-control" asp-items="@ViewBag.GradeSelectList">
-
+                    <option selected>@Localizer["GradeList"]</option>
                 </select>
             </div>
             <div class="form-group">
-                <a class="btn btn-secondary" role="button" asp-action="Index" asp-controller="Student" >Back</a>
-                <input asp-route-subj=@ViewBag.SubjectsSelectList.SelectedValue type="submit" value="     Add      " class="btn btn-primary" />
+                <a class="btn btn-secondary" role="button" asp-action="Index" asp-controller="Student" >@Localizer["Back"]</a>
+                <input asp-route-subj=@ViewBag.SubjectsSelectList.SelectedValue type="submit" value=@Localizer["AddButton"] class="btn btn-primary" />
             </div>
         </form>
     </div>

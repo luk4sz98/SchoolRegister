@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FRFgYeRZtytsbtPrZIH8gwoaF+bMkA+GuABTEI6/4o7CVCdRR/9X5MOJBQuEqmfSoB1rAVzdt/+Eb1zHME9umw==",
+  "dgSpecHash": "tyBZgF0c+66lPhfROToRaehK3Bz6CNiGVAK6VKNJQAjpekA52oD5KpATwSL9jGdMQexI2j24c6XwJvV2K5NItA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lukas\\Desktop\\Lab5Aplikacje\\School register\\SchoolRegister.Tests\\SchoolRegister.Tests.csproj",
+  "projectFilePath": "C:\\Users\\lukas\\Desktop\\Lab6Aplikacje\\School register\\SchoolRegister.Tests\\SchoolRegister.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lukas\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\lukas\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

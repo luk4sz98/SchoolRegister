@@ -1,7 +1,9 @@
 @model SchoolRegister.ViewModels.VM.GroupVm
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = "Group details";
+    ViewData["Title"] = Localizer["Title"].Value;
 }
 
 <h2>@ViewData["Title"]</h2>
@@ -14,13 +16,13 @@
                     @Html.DisplayNameFor(model => model.Id)
                 </th>
                 <th class="col-2">
-                    @Html.DisplayNameFor(model => model.Name)
+                    @Localizer["Name"]
                 </th>
                 <th class="col-3">
-                    @Html.DisplayNameFor(model => model.Subjects)
+                    @Localizer["Subjects"]
                 </th>
                 <th class="col-3">
-                    @Html.DisplayNameFor(model => model.Students)
+                    @Localizer["Students"]
                 </th>               
             </tr>
         </thead>
@@ -36,9 +38,9 @@
                     <ul>
                         @foreach (var subject in Model.Subjects)
                         {
-                            <li>
+                                    <li>
                                 @Html.DisplayFor(modelItem => subject.Name)
-                            </li>
+                                    </li>
                         }
                     </ul>
                 </td>
@@ -46,9 +48,9 @@
                     <ul>
                         @foreach (var student in Model.Students)
                         {
-                            <li>
+                                    <li>
                                 @Html.DisplayFor(modelItem => student.FirstName) @Html.DisplayFor(modelItem => student.LastName) 
-                            </li>
+                                    </li>
                         }
                     </ul>
                 </td>                
@@ -58,7 +60,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">@Localizer["Back"]</a>
 </div>
 
 @section Scripts {

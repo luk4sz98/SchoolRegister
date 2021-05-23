@@ -58,7 +58,7 @@ namespace SchoolRegister.DAL.EF
                 .HasOne(s => s.Subject)
                 .WithMany(g => g.Grades)
                 .HasForeignKey(g => g.SubjectId);
- 
+
 
             modelBuilder.Entity<Grade>()
                 .HasOne(g => g.Student)

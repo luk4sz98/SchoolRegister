@@ -7705,11 +7705,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lukas\\Desktop\\Lab5Aplikacje\\School register\\SchoolRegister.Services\\SchoolRegister.Services.csproj",
+      "projectUniqueName": "C:\\Users\\lukas\\Desktop\\Lab6Aplikacje\\School register\\SchoolRegister.Services\\SchoolRegister.Services.csproj",
       "projectName": "SchoolRegister.Services",
-      "projectPath": "C:\\Users\\lukas\\Desktop\\Lab5Aplikacje\\School register\\SchoolRegister.Services\\SchoolRegister.Services.csproj",
+      "projectPath": "C:\\Users\\lukas\\Desktop\\Lab6Aplikacje\\School register\\SchoolRegister.Services\\SchoolRegister.Services.csproj",
       "packagesPath": "C:\\Users\\lukas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lukas\\Desktop\\Lab5Aplikacje\\School register\\SchoolRegister.Services\\obj\\",
+      "outputPath": "C:\\Users\\lukas\\Desktop\\Lab6Aplikacje\\School register\\SchoolRegister.Services\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\lukas\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7726,14 +7726,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\lukas\\Desktop\\Lab5Aplikacje\\School register\\SchoolRegister.DAL\\SchoolRegister.DAL.csproj": {
-              "projectPath": "C:\\Users\\lukas\\Desktop\\Lab5Aplikacje\\School register\\SchoolRegister.DAL\\SchoolRegister.DAL.csproj"
+            "C:\\Users\\lukas\\Desktop\\Lab6Aplikacje\\School register\\SchoolRegister.DAL\\SchoolRegister.DAL.csproj": {
+              "projectPath": "C:\\Users\\lukas\\Desktop\\Lab6Aplikacje\\School register\\SchoolRegister.DAL\\SchoolRegister.DAL.csproj"
             },
-            "C:\\Users\\lukas\\Desktop\\Lab5Aplikacje\\School register\\SchoolRegister.Model\\SchoolRegister.Model.csproj": {
-              "projectPath": "C:\\Users\\lukas\\Desktop\\Lab5Aplikacje\\School register\\SchoolRegister.Model\\SchoolRegister.Model.csproj"
+            "C:\\Users\\lukas\\Desktop\\Lab6Aplikacje\\School register\\SchoolRegister.Model\\SchoolRegister.Model.csproj": {
+              "projectPath": "C:\\Users\\lukas\\Desktop\\Lab6Aplikacje\\School register\\SchoolRegister.Model\\SchoolRegister.Model.csproj"
             },
-            "C:\\Users\\lukas\\Desktop\\Lab5Aplikacje\\School register\\SchoolRegister.ViewModels\\SchoolRegister.ViewModels.csproj": {
-              "projectPath": "C:\\Users\\lukas\\Desktop\\Lab5Aplikacje\\School register\\SchoolRegister.ViewModels\\SchoolRegister.ViewModels.csproj"
+            "C:\\Users\\lukas\\Desktop\\Lab6Aplikacje\\School register\\SchoolRegister.ViewModels\\SchoolRegister.ViewModels.csproj": {
+              "projectPath": "C:\\Users\\lukas\\Desktop\\Lab6Aplikacje\\School register\\SchoolRegister.ViewModels\\SchoolRegister.ViewModels.csproj"
             }
           }
         }

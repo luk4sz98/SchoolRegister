@@ -1,7 +1,9 @@
 @page
 @model RegisterNewUsersDataModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "Register new users";
+    ViewData["Title"] = Localizer["Title"].Value;
     ViewData["ActivePage"] = ManageNavPages.RegisterNewUsers;
 }
 <h4>@ViewData["Title"]</h4>
@@ -9,7 +11,7 @@
 <div class="row">
     <div class="col-md-4">
         <form method="post">
-            <h4>Create a new account.</h4>
+            <h4>@Localizer["Heading"]</h4>
             <hr />
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
@@ -18,50 +20,62 @@
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Input.Password"></label>
+                <label asp-for="Input.Password">@Localizer["Password"]</label>
                 <input asp-for="Input.Password" class="form-control" />
                 <span asp-validation-for="Input.Password" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Input.ConfirmPassword"></label>
+                <label asp-for="Input.ConfirmPassword">@Localizer["ConfirmPassword"]</label>
                 <input asp-for="Input.ConfirmPassword" class="form-control" />
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Input.FirstName"></label>
+                <label asp-for="Input.FirstName">@Localizer["FirstName"]</label>
                 <input asp-for="Input.FirstName" class="form-control" /> <span asp-validation-for="Input.FirstName"
                     class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Input.LastName"></label>
+                <label asp-for="Input.LastName">@Localizer["LastName"]</label>
                 <input asp-for="Input.LastName" class="form-control" />
                 <span asp-validation-for="Input.LastName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label>Role</label>
-                <select asp-for="Input.RoleId" class="form-control" asp-items="@ViewData["Roles"] as IEnumerable<SelectListItem>"></select>
+                <label>@Localizer["Role"]</label>
+                <select asp-for="Input.RoleId" class="form-control" asp-items="@ViewData["Roles"] as IEnumerable<SelectListItem>">
+                     <option selected>
+                         @Localizer["RolesSelectList"]
+                    </option>
+                </select>
                 <span asp-validation-for="Input.RoleId" class="text-danger"></span>
             </div>
             <div class="student-selected">
                 <div class="form-group">
-                    <label>Group</label>
-                    <select asp-for="Input.GroupId" class="form-control" asp-items="@ViewData["Groups"] as IEnumerable<SelectListItem>"></select>
+                    <label>@Localizer["Group"]</label>
+                    <select asp-for="Input.GroupId" class="form-control" asp-items="@ViewData["Groups"] as IEnumerable<SelectListItem>">
+                     <option selected>
+                         @Localizer["GroupsSelectList"]
+                        </option>                        
+                    </select>
                     <span asp-validation-for="Input.GroupId" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label>Parent</label>
-                    <select asp-for="Input.ParentId" class="form-control" asp-items="@ViewData["Parents"] as IEnumerable<SelectListItem>"></select>
+                    <label>@Localizer["Parent"]</label>
+                    <select asp-for="Input.ParentId" class="form-control" asp-items="@ViewData["Parents"] as IEnumerable<SelectListItem>">
+                     <option selected>
+                         @Localizer["ParentsSelectList"]
+                    </option>                          
+                    </select>
                     <span asp-validation-for="Input.ParentId" class="text-danger"></span>
                 </div>
             </div>
             <div class="teacher-selected">
                 <div class="form-group">
-                    <label asp-for="Input.TeacherTitles"></label>
+                    <label asp-for="Input.TeacherTitles">@Localizer["TeacherTitles"]</label>
                     <input asp-for="Input.TeacherTitles" class="form-control" />
                     <span asp-validation-for="Input.TeacherTitles" class="text-danger"></span>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="submit" class="btn btn-primary">@Localizer["RegisterButton"]</button>
         </form>
     </div>
 </div>

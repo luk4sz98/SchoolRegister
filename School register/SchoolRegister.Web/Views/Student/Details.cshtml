@@ -1,7 +1,10 @@
-@model SchoolRegister.BLL.DataModels.Student
+@model SchoolRegister.ViewModels.VM.StudentVm
+@using Microsoft.AspNetCore.Mvc.Localization
+@using SchoolRegister.Services.Services
+@inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = $"{Model.FirstName} {Model.LastName} details";
+    ViewData["Title"] = $"{Model.FirstName} {Model.LastName} {Localizer["Title"].Value}";
 }
 
 <h2>@ViewData["Title"]</h2>
@@ -15,7 +18,7 @@
                 </th>
                 @if (!User.IsInRole("Parent")) {
                 <th class="col-2">
-                    @Html.DisplayNameFor(model => model.Parent)
+                    @Localizer["Parent"]
                 </th>
                 }
 
@@ -23,16 +26,17 @@
                     @Html.DisplayNameFor(model => model.Email)
                 </th>
                 <th class="col-1">
-                    @Html.DisplayNameFor(model => model.Group)
-                </th>
-                <th class="col-1">
-                    @Html.DisplayNameFor(model => model.AverageGrade)
+                    @Localizer["Group"]
                 </th>
                 <th class="col-2">
-                    @Html.DisplayNameFor(model => model.Grades)
+                    @Localizer["AverageGrade"]
+                </th>
+
+                <th class="col-3">
+                    @Localizer["AverageGradePerSubject"]
                 </th>
                 <th class="col-2">
-                    @Html.DisplayNameFor(model => model.AverageGradePerSubject)
+                    @Localizer["Grades"]
                 </th>
             </tr>
         </thead>
@@ -43,7 +47,7 @@
                 </td>
                 @if (!User.IsInRole("Parent")) {
                     <td>
-                        @Html.DisplayFor(model => model.Parent.FirstName) @Html.DisplayFor(model => model.Parent.LastName)
+                        @Html.DisplayFor(model => model.ParentName)
                     </td>
                 }
    
@@ -56,20 +60,26 @@
                 <td>
                     @Html.DisplayFor(model => model.AverageGrade)
                 </td>
-                <td>
-                    <ul>
-                    @foreach (var item in Model.Grades) {
-                       
-                            <li>@Html.DisplayFor(modelItem => item.Subject.Name):  @Html.DisplayFor(modelItem => item.GradeValue) </li> 
-                    }
-                     </ul> 
-                </td>
+
                 <td>
                     <ul>
                         @foreach (var item in Model.AverageGradePerSubject) {
-                            <li>@Html.DisplayFor(modelItem => item.Key): @Html.DisplayFor(modelItem => item.Value)</li>
+                            <li>@item.Key.FirstLetterOfEachWord(): @item.Value</li>
                         }
                     </ul>
+                </td>
+                <td>
+                    <ul>
+                    @foreach (var subject in Model.GradesPerSubject.Keys) {
+                            
+                            <li>     
+                                @subject.FirstLetterOfEachWord():
+                                @foreach (var grade in Model.GradesPerSubject[subject]) {
+                                    @($"{grade}; ")
+                                }
+                             </li> 
+                    }
+                     </ul> 
                 </td>
             </tr>
         </tbody>
@@ -77,7 +87,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">@Localizer["Back"]</a>
 </div>
 
 @section Scripts {

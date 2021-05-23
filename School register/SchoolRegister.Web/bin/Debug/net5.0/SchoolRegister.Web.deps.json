@@ -323,6 +323,14 @@
         "runtime": {
           "SchoolRegister.Web.dll": {}
         },
+        "resources": {
+          "en/SchoolRegister.Web.resources.dll": {
+            "locale": "en"
+          },
+          "pl-PL/SchoolRegister.Web.resources.dll": {
+            "locale": "pl-PL"
+          }
+        },
         "compile": {
           "SchoolRegister.Web.dll": {}
         }

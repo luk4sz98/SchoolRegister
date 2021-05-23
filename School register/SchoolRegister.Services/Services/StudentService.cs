@@ -22,7 +22,7 @@ namespace SchoolRegister.Services.Services
         {
         }
 
-        public async Task<Student> GetStudentAsync(Expression<Func<Student, bool>> filterExpressions)
+        public async Task<StudentVm> GetStudentAsync(Expression<Func<Student, bool>> filterExpressions)
         {
             try
             {
@@ -31,8 +31,8 @@ namespace SchoolRegister.Services.Services
 
                 var studentEntity = await DbContext.Users.OfType<Student>().FirstOrDefaultAsync(filterExpressions);
 
-                //var studentVm = Mapper.Map<StudentVm>(studentEntity);
-                return studentEntity;
+                var studentVm = Mapper.Map<StudentVm>(studentEntity);
+                return studentVm;
             }
             catch (Exception ex)
             {

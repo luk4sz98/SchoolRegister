@@ -1,7 +1,9 @@
 @model  SchoolRegister.ViewModels.VM.AttachDetachSubjectGroupVm
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = $"Detach {ViewBag.Subject.Name.ToLower()} from group";
+    ViewData["Title"] = String.Join(" - ", ViewBag.Subject.Name, Localizer["GroupManage"].Value);
 }
 
 <h2>@ViewData["Title"]</h2>
@@ -18,21 +20,20 @@
                 <input asp-for="SubjectId" type="hidden" class="form-control" />
             </div>            
             <div class="form-group">
-
-                <label class="control-label">Group</label>
+                <label class="control-label">@Localizer["Group"]</label>
                 <select name="groupName" class="form-control" asp-items="@ViewBag.GroupsSelectList">
-                    <option selected>Choose group</option>
+                    <option selected>@Localizer["GroupSelectList"]</option>
                 </select>
             </div>
             <div class="form-group">
-                <input asp-route-subjectId="@ViewBag.Subject.Id" asp-route-groupName=@ViewBag.GroupsSelectList.SelectedValue asp-controller="Group" type="submit" value="Detach" class="btn btn-danger" />
+                <input asp-route-subjectId="@ViewBag.Subject.Id" asp-route-groupName=@ViewBag.GroupsSelectList.SelectedValue asp-controller="Group" type="submit" value=@Localizer["DetachButton"] class="btn btn-danger" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index" asp-controller="Subject">Back to List</a>
+    <a asp-action="Index" asp-controller="Subject">@Localizer["Back"]</a>
 </div>
 
 @section Scripts {

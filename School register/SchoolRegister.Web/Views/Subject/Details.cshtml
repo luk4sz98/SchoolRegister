@@ -1,7 +1,9 @@
 @model SchoolRegister.ViewModels.VM.SubjectVm
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = "Subject details";
+    ViewData["Title"] = Localizer["Details"].Value;
 }
 
 <h2>@ViewData["Title"]</h2>
@@ -14,16 +16,16 @@
                     @Html.DisplayNameFor(model => model.Id)
                 </th>
                 <th class="col-2">
-                    @Html.DisplayNameFor(model => model.Name)
+                    @Localizer["Name"]
                 </th>
                 <th class="col-3">
-                    @Html.DisplayNameFor(model => model.Description)
+                    @Localizer["Description"]
                 </th>
                 <th class="col-2">
-                    @Html.DisplayNameFor(model => model.TeacherName)
+                    @Localizer["Teacher"]
                 </th>
                 <th class="col-2">
-                    @Html.DisplayNameFor(model => model.Groups)
+                    @Localizer["Groups"]
                 </th>
             </tr>
         </thead>
@@ -56,7 +58,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">@Localizer["Back"]</a>
 </div>
 
 @section Scripts {

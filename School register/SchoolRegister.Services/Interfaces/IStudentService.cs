@@ -9,7 +9,7 @@ namespace SchoolRegister.Services.Interfaces
 {
     public interface IStudentService
     {
-        Task<Student> GetStudentAsync(Expression<Func<Student, bool>> filterExpressions);
+        Task<StudentVm> GetStudentAsync(Expression<Func<Student, bool>> filterExpressions);
 
         IEnumerable<StudentVm> GetStudents(Expression<Func<Student, bool>> filterExpressions = null);
 

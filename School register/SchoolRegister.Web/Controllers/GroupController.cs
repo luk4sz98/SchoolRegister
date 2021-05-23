@@ -50,10 +50,10 @@ namespace SchoolRegister.Web.Controllers
             if (id.HasValue)
             {
                 var groupVm = await _groupService.GetGroupAsync(x => x.Id == id);
-                ViewBag.ActionType = "Edit";
+                ViewBag.ActionType = Localizer["EditGroup"];
                 return View(Mapper.Map<AddOrUpdateGroupVm>(groupVm));
             }
-            ViewBag.ActionType = "Add";
+            ViewBag.ActionType = Localizer["AddGroup"];
             return View();
 
         }
@@ -206,16 +206,20 @@ namespace SchoolRegister.Web.Controllers
 
         [HttpGet]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> DetachStudentFromGroup(int studentId) {
+        public async Task<IActionResult> DetachStudentFromGroup(int studentId)
+        {
             ViewBag.Student = await _studentService.GetStudentAsync(s => s.Id == studentId);
             return View();
         }
 
         [HttpPost]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> DetachStudentFromGroup(int studentId, string groupName) {
-            if(ModelState.IsValid) {
-                var model = new AttachStudentToGroupVm{
+        public async Task<IActionResult> DetachStudentFromGroup(int studentId, string groupName)
+        {
+            if (ModelState.IsValid)
+            {
+                var model = new AttachStudentToGroupVm
+                {
                     Id = studentId,
                     GroupId = Convert.ToInt32(groupName),
                 };

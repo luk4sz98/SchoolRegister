@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using SchoolRegister.BLL.DataModels;
 
 namespace SchoolRegister.ViewModels.VM
 {
@@ -15,6 +16,14 @@ namespace SchoolRegister.ViewModels.VM
         public int? GroupId { get; set; }
 
         public int? ParentId { get; set; }
-        
+        public Group Group {get; set; }
+       
+        [Display(Name="Parent")]
+        public string ParentName { get; set; }
+        public IList<Grade> Grades { get; set; }
+        public double AverageGrade { get; set; }
+        public IDictionary<string, double> AverageGradePerSubject { get; set; }
+        public IDictionary<string, List<int>> GradesPerSubject { get; set;}
+        public string Email { get; set; }
     }
 }

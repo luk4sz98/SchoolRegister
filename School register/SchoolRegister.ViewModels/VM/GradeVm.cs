@@ -13,6 +13,6 @@ namespace SchoolRegister.ViewModels.VM
         public DateTime DateOfIssue { get; set; }
         
         [Display(Name="Grade")]
-        public GradeScale GradeValue { get; set; }
+        public int GradeValue { get; set; }
     }
 }
