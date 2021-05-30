@@ -77,7 +77,7 @@ public static class Extensions
             FirstName = "Adam",
             LastName = "Bednarski",
             UserName = "t1@eg.eg",
-            Email = "email",
+            Email = "lukaszwluka98@gmail.com",
             Title = "mgr inż.",
             RegistrationDate = new DateTime(2010, 1, 1)
         };
@@ -116,7 +116,7 @@ public static class Extensions
             FirstName = "Zbigniew",
             LastName = "Kowalski",
             UserName = "p1@eg.eg",
-            Email = "email",
+            Email = "lukaszbarca98@gmail.com",
             RegistrationDate = new DateTime(2014, 03, 20)
         };
         await userManager.CreateAsync(p1, userPassword);

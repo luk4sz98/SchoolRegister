@@ -18,6 +18,6 @@ namespace SchoolRegister.Services.Interfaces
         Task<SubjectVm> DetachTeacherFromSubjectAsync(AttachDetachTeacherToSubjectVm attachToTeacherVm);
 
         Task<bool> RemoveSubjectAsync(int groupId);
-
+        
     }
 }

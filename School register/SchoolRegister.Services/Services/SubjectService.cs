@@ -26,7 +26,7 @@ namespace SchoolRegister.Services.Services
             try
             {
                 if (addOrUpdateVm == null)
-                    throw new ArgumentNullException($"View model paramter is null.");
+                    throw new ArgumentNullException($"{addOrUpdateVm} is null");
 
                 var subjectEntity = Mapper.Map<Subject>(addOrUpdateVm);
 
@@ -61,7 +61,7 @@ namespace SchoolRegister.Services.Services
             try
             {
                 if (attachToTeacherVm == null)
-                    throw new ArgumentNullException("Parameter is required");
+                    throw new ArgumentNullException($"{attachToTeacherVm} is null");
 
                 var subjectEntity = await DbContext.Subject.FirstOrDefaultAsync(s => s.Id == attachToTeacherVm.SubjectId);
 
@@ -86,7 +86,7 @@ namespace SchoolRegister.Services.Services
             try
             {
                 if (attachToTeacherVm == null)
-                    throw new ArgumentNullException("Parameter is required");
+                    throw new ArgumentNullException($"{attachToTeacherVm} is null");
 
                 var subjectEntity = await DbContext.Subject.FirstOrDefaultAsync(s => s.Id == attachToTeacherVm.SubjectId);
 
@@ -110,7 +110,7 @@ namespace SchoolRegister.Services.Services
             try
             {
                 if (filterExpressions == null)
-                    throw new ArgumentNullException($"FilterExpression is null.");
+                    throw new ArgumentNullException($"{filterExpressions} is null.");
 
                 var subjectEntity = await DbContext.Subject.FirstOrDefaultAsync(filterExpressions);
                 var subjectVm = Mapper.Map<SubjectVm>(subjectEntity);

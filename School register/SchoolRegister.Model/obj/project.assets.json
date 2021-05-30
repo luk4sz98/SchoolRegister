@@ -371,11 +371,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lukas\\Desktop\\Lab6Aplikacje\\School register\\SchoolRegister.Model\\SchoolRegister.Model.csproj",
+      "projectUniqueName": "C:\\Users\\lukas\\Desktop\\Lab7Aplikacje\\School register\\SchoolRegister.Model\\SchoolRegister.Model.csproj",
       "projectName": "SchoolRegister.Model",
-      "projectPath": "C:\\Users\\lukas\\Desktop\\Lab6Aplikacje\\School register\\SchoolRegister.Model\\SchoolRegister.Model.csproj",
+      "projectPath": "C:\\Users\\lukas\\Desktop\\Lab7Aplikacje\\School register\\SchoolRegister.Model\\SchoolRegister.Model.csproj",
       "packagesPath": "C:\\Users\\lukas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lukas\\Desktop\\Lab6Aplikacje\\School register\\SchoolRegister.Model\\obj\\",
+      "outputPath": "C:\\Users\\lukas\\Desktop\\Lab7Aplikacje\\School register\\SchoolRegister.Model\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\lukas\\AppData\\Roaming\\NuGet\\NuGet.Config",

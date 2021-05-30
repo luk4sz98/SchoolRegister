@@ -18,7 +18,7 @@ namespace SchoolRegister.Services.Interfaces
         Task<StudentVm> AttachStudentToGroupVmAsync(AttachStudentToGroupVm attachStudentToGroup);
 
         Task<bool> RemoveStudentFromGroupAsync(AttachStudentToGroupVm attachStudentToGroup);
-        Task AttachSubjectToGroupAsync(AttachDetachSubjectGroupVm attachDetachSubjectToGroup);
+        Task<bool> AttachSubjectToGroupAsync(AttachDetachSubjectGroupVm attachDetachSubjectToGroup);
 
         Task<bool> RemoveSubjectFromGroupAsync(AttachDetachSubjectGroupVm attachDetachSubjectToGroup);
     }

@@ -16,7 +16,9 @@ namespace SchoolRegister.ViewModels.VM
         public int? GroupId { get; set; }
 
         public int? ParentId { get; set; }
-        public Group Group {get; set; }
+
+        [Display(Name="Group")]
+        public string GroupName {get; set; }
        
         [Display(Name="Parent")]
         public string ParentName { get; set; }

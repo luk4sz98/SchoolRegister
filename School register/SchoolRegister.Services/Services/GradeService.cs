@@ -53,9 +53,9 @@ namespace SchoolRegister.Services.Services
                 if (addGradeToStudent == null)
                     throw new ArgumentNullException("Grade can not be null");
 
-                var teacherEntity = await DbContext.Users.FirstOrDefaultAsync(t => t.Id == addGradeToStudent.TeacherId);
+                var teacherEntity = await DbContext.Users.OfType<Teacher>().FirstOrDefaultAsync(t => t.Id == addGradeToStudent.TeacherId);
 
-                var studentEntity = await DbContext.Users.FirstOrDefaultAsync(s => s.Id == addGradeToStudent.StudentId);
+                var studentEntity = await DbContext.Users.OfType<Student>().FirstOrDefaultAsync(s => s.Id == addGradeToStudent.StudentId);
 
                 if (teacherEntity == null || studentEntity == null)
                     throw new ArgumentException($"There is no user with id {addGradeToStudent.StudentId} or {addGradeToStudent.TeacherId}.");
@@ -63,7 +63,18 @@ namespace SchoolRegister.Services.Services
                 if (!await UserManager.IsInRoleAsync(teacherEntity, "Teacher"))
                     throw new UnauthorizedAccessException("Only teacher are allowed to add a grade to student.");
 
+                var subjectEntity = await DbContext.Subject.FirstOrDefaultAsync(s => s.Id == addGradeToStudent.SubjectId);
+
+                // var grade = new Grade() {
+                //     Student = studentEntity,
+                //     Subject = subjectEntity,
+                //     DateOfIssue = addGradeToStudent.DateOfIssue,
+                //     SubjectId = addGradeToStudent.SubjectId,
+                //     StudentId = addGradeToStudent.StudentId,
+                //     GradeValue = addGradeToStudent.GradeValue
+                // };
                 var grade = Mapper.Map<Grade>(addGradeToStudent);
+               // grade.Student = (Student)studentEntity;
                 await DbContext.Grades.AddAsync(grade);
                 await DbContext.SaveChangesAsync();
 

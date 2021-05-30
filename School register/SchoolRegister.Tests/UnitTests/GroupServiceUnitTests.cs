@@ -175,7 +175,7 @@ namespace SchoolRegister.Tests.UnitTests
             await _groupService.AttachSubjectToGroupAsync(attachSubjectGroupVm);
             var group = await _groupService.GetGroupAsync(g => g.Id == attachSubjectGroupVm.GroupId);
             Assert.NotNull(group);
-            Assert.NotNull(group.Subjects.FirstOrDefault(s => s.Name == "Administracja Intenetowymi Systemami Baz Danych"));
+            Assert.NotNull(group.Subjects.FirstOrDefault(s => s == "Administracja Intenetowymi Systemami Baz Danych"));
 
         }
 
@@ -191,7 +191,7 @@ namespace SchoolRegister.Tests.UnitTests
             var group = await _groupService.GetGroupAsync(g => g.Id == detachSubjectGroupVm.GroupId);
             Assert.True(result);
             Assert.NotNull(group);
-            Assert.Null(group.Subjects.FirstOrDefault(s => s.Name == "Administracja Intenetowymi Systemami Baz Danych"));
+            Assert.Null(group.Subjects.FirstOrDefault(s => s == "Administracja Intenetowymi Systemami Baz Danych"));
         }
 
     }

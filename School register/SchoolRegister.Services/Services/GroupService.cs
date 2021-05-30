@@ -20,7 +20,7 @@ namespace SchoolRegister.Services.Services
         public GroupService(ApplicationDbContext dbContext, IMapper mapper, ILogger logger, UserManager<User> userManager) : base(dbContext, mapper, logger, userManager)
         {
         }
-        public async Task AttachSubjectToGroupAsync(AttachDetachSubjectGroupVm attachDetachSubjectToGroup)
+        public async Task<bool> AttachSubjectToGroupAsync(AttachDetachSubjectGroupVm attachDetachSubjectToGroup)
         {
             try
             {
@@ -41,6 +41,7 @@ namespace SchoolRegister.Services.Services
 
                 await DbContext.SubjectGroup.AddAsync(subjectGroupEntity);
                 await DbContext.SaveChangesAsync();
+                return true;
 
             }
             catch (Exception ex)

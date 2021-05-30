@@ -98,27 +98,29 @@ namespace SchoolRegister.Web.Controllers
 
         [HttpGet]
         [Authorize(Roles = "Teacher")]
-        public async Task<IActionResult> AddGradeToStudent(int studentId) {
+        public async Task<IActionResult> AddGradeToStudent(int studentId)
+        {
             var student = await _studentService.GetStudentAsync(s => s.Id == studentId);
             ViewBag.Student = $"{student.FirstName} {student.LastName}";
-            var subjects =  _subjectService.GetSubjects(s=>s.SubjectGroups.Any(sg => sg.GroupId == student.GroupId));
-            ViewBag.SubjectsSelectList = new SelectList(subjects.Select(s => new {
+            var subjects = _subjectService.GetSubjects(s => s.SubjectGroups.Any(sg => sg.GroupId == student.GroupId));
+            ViewBag.SubjectsSelectList = new SelectList(subjects.Select(s => new
+            {
                 Text = $"{s.Name}",
                 Value = s.Id
             }), "Value", "Text");
-            ViewBag.GradeSelectList = new SelectList(Enum.GetValues(typeof(GradeScale)),"Choose grade");
+            ViewBag.GradeSelectList = new SelectList(Enum.GetValues(typeof(GradeScale)), "Choose grade");
             return View();
         }
 
         [HttpPost]
         [Authorize(Roles = "Teacher")]
-        public async Task<IActionResult> AddGradeToStudent(AddGradeToStudentVm addGradeToStudentVm, string subj) {
+        public async Task<IActionResult> AddGradeToStudent(AddGradeToStudentVm addGradeToStudentVm)
+        {
             var user = _userManager.GetUserAsync(User).Result;
             addGradeToStudentVm.TeacherId = user.Id;
-            addGradeToStudentVm.SubjectId = Convert.ToInt32(subj);
             await _gradeService.AddGradeToStudentAsync(addGradeToStudentVm);
             return RedirectToAction("Index", "Student");
         }
-  
+
     }
 }

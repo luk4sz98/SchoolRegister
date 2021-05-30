@@ -7,7 +7,7 @@ namespace SchoolRegister.ViewModels.VM {
         public string Name {get; set; }
         public string Description {get; set; }
         
-        public IList<GroupVm> Groups { get; set; }
+        public IList<string> Groups { get; set; }
 
         [Display(Name = "Teacher")]
         public string TeacherName { get; set; }

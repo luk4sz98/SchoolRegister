@@ -52,8 +52,7 @@ namespace SchoolRegister.Web.Controllers {
 
         [HttpPost]
         [Authorize(Roles = "Teacher")]
-        public async Task<IActionResult> SendEmail(EmailRequestVm emailModel, string parentName) {
-            emailModel.ParentId = Convert.ToInt32(parentName);
+        public async Task<IActionResult> SendEmail(EmailRequestVm emailModel) {
             if (emailModel != null) { 
                 await _emailService.SendEmailAsync(emailModel);
                 return RedirectToAction("Succesful");

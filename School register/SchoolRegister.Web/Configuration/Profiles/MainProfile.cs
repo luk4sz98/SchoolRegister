@@ -13,11 +13,12 @@ namespace SchoolRegister.Web.Configuration.Profiles
         {
             CreateMap<Subject, SubjectVm>()
                         .ForMember(dest => dest.TeacherName, x => x.MapFrom(src => $"{src.Teacher.FirstName} {src.Teacher.LastName}"))
-                        .ForMember(dest => dest.Groups, x => x.MapFrom(src => src.SubjectGroups.Select(y => y.Group)));
+                        .ForMember(dest => dest.Groups, x => x.MapFrom(src => src.SubjectGroups.Select(y => y.Group.Name)));
 
             CreateMap<AddOrUpdateSubjectVm, Subject>();
             CreateMap<Group, GroupVm>()
-            .ForMember(dest => dest.Subjects, x => x.MapFrom(src => src.SubjectGroups.Select(s => s.Subject)));
+            .ForMember(dest => dest.Subjects, x => x.MapFrom(src => src.SubjectGroups.Select(s => s.Subject.Name)))
+            .ForMember(dest => dest.Students, x => x.MapFrom(src => src.Students.Select(s => $"{s.FirstName} {s.LastName}")));
 
             CreateMap<AddOrUpdateGroupVm, Group>();
             CreateMap<GroupVm, AddOrUpdateGroupVm>();
@@ -26,7 +27,8 @@ namespace SchoolRegister.Web.Configuration.Profiles
 
             CreateMap<Student, StudentVm>()
                 .ForMember(dest => dest.Id, x => x.MapFrom(src => src.Id))
-                .ForMember(dest => dest.ParentName, x => x.MapFrom(src => $"{src.Parent.FirstName} {src.Parent.LastName}"));
+                .ForMember(dest => dest.ParentName, x => x.MapFrom(src => $"{src.Parent.FirstName} {src.Parent.LastName}"))
+                .ForMember(dest => dest.GroupName, x => x.MapFrom(src =>src.Group.Name));
 
             CreateMap<Teacher, TeacherVm>();
 

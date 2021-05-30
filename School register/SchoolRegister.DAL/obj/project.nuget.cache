@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PqoJ/ngSDZ3OC4rEk/2RCNYpo6Jq8uuSWSuEcE9SWHNa/3BOG1AWeiBxiiN/Tk8BClBmgLld7yntm6SmfGiPdQ==",
+  "dgSpecHash": "t2COTXZzGfE/EBPcddDlnpUHGClurc1IVfQbK/CSAggCFUNQjudBQAemdFLneYnQTM1NPESA0xosB5loepymIQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lukas\\Desktop\\Lab6Aplikacje\\School register\\SchoolRegister.DAL\\SchoolRegister.DAL.csproj",
+  "projectFilePath": "C:\\Users\\lukas\\Desktop\\Lab7Aplikacje\\School register\\SchoolRegister.DAL\\SchoolRegister.DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lukas\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\lukas\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

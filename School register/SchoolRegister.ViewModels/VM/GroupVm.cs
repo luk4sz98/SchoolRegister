@@ -10,7 +10,7 @@ namespace SchoolRegister.ViewModels.VM
         [Required]
         public string Name { get; set; }
 
-        public IEnumerable<Student> Students { get; set; }
-        public IEnumerable<Subject> Subjects { get; set; }
+        public IEnumerable<string> Students { get; set; }
+        public IEnumerable<string> Subjects { get; set; }
     }
 }

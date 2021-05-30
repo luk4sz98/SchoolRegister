@@ -14,17 +14,11 @@
         <form  asp-action="AddGradeToStudent">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <input asp-for="TeacherId" class="form-control" type="hidden"/>
-            </div>
-            <div class="form-group">
                 <input asp-for="StudentId" class="form-control" type="hidden"/>
             </div>
             <div class="form-group">
-                <input asp-for="SubjectId" class="form-control" type="hidden"/>
-            </div>
-            <div class="form-group">
                 <label class="control-label">@Localizer["Subject"]</label>
-                <select name="subj" class="form-control" asp-items="@ViewBag.SubjectsSelectList">
+                <select asp-for="SubjectId" class="form-control" asp-items="@ViewBag.SubjectsSelectList">
                     <option selected>@Localizer["SubjectList"]</option>
                 </select>
             </div>
@@ -41,7 +35,7 @@
             </div>
             <div class="form-group">
                 <a class="btn btn-secondary" role="button" asp-action="Index" asp-controller="Student" >@Localizer["Back"]</a>
-                <input asp-route-subj=@ViewBag.SubjectsSelectList.SelectedValue type="submit" value=@Localizer["AddButton"] class="btn btn-primary" />
+                <input type="submit" value=@Localizer["AddButton"] class="btn btn-primary" />
             </div>
         </form>
     </div>
